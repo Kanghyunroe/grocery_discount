@@ -22,6 +22,10 @@ library(tidyverse)
 ```
 
 
+
+
+
+
 # Introduction
 
 Since the end of the pandemic with rising inflation, grocery prices have been a contentious topic of concern for Canadians. While grocery chains have raised prices, they also have introduced various discounts to encourage shopping. 
@@ -67,7 +71,9 @@ If my paper were 10 pages, then should be be at least 2.5 pages. The discussion 
 
 ## Missing Data {#sec-discussion-missing-data}
 
-Please don't use these as sub-heading labels - change them to be what your point actually is.
+The dataset only records data from February 28th, 2024 to November 11th, 2024. The problem is then that the February entry in *iNSERT FIGURE* does not accurately reflect the average grocery discount. For future study, I'd want to have a greater variation of our data across multiple years so we can find a more accurate the average grocery discount for each month. 
+
+Moreover, the database had a lot of errors where either discounts were not listed, not all the entries were discounts, and the discount values were listed in text. All three errors made certain values unusable, leading us to filter them out of the dataset. 
 
 ## Sources of Bias {#sec-discussion-bias} 
 
