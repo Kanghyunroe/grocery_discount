@@ -35,11 +35,17 @@ The paper is structured as follows: @sec-data focuses on the data and measuremen
 
 # Data {#sec-data}
 
-The dataset was obtained from @citeData, and contains pricing information about products offered across 8 major grocers across Canada — Voila, T&T, Loblaws, No Frills, Metro, Galleria, Walmart and Save-On-Foods. The pricing data was compiled from the vendor's websites directly. One table, named Product, contained information about the product name and vendor. Another table, named Raw, tracked all the price changes of these products, including the original price, new price, and time of price change each time it occurred. The time frame that the data covers is from February 28, 2024 until November 14, 2024 around noon. 
+## Overview
 
-Using SQL, the data was cleaned and organized to locate patterns. This dataset contained many entries where data was incorrectly entered, often with the word "was" under the variable tracking original price. There are also events that are not price changes, such as out of stock notices, that are recorded in Raw. These events are distinguished by a null value in the old_price column. Both of these occurences were filtered out using SQL. To find patterns, the average discount amount for each month and each vendor was also calculated using SQL.
+We use the statistical programming language R [@citeR].... Our data [@shelter].... Following @tellingstories, we consider...
 
-We used the statistical programming language `R` [@citeR] to produce graphs to better visualize the data cleaned by SQL. 
+Overview text
+
+## Measurement
+	
+Some paragraphs about how we go from a phenomena in the world to an entry in the dataset.
+
+
 
 # Results {#sec-results}
 
@@ -60,11 +66,11 @@ Moreover, the database had a lot of errors where either discounts were not liste
 
 ## Sources of Bias {#sec-discussion-bias} 
 
-There is significant measurement bias in the dataset because the method of recording discounts either via text or numerically introduces bias in the dataset. This hurts the validity of our results because multiple datapoints had to be removed to allow for interpretation. In addition, without further research, one must be careful in establishing that there is a relationship between September and higher discounts. While we observed that 2024 September saw higher discounts, our initial hypothesis on back-to-school sales driving the discount might be due to our confirmation bias. However, further research is needed to validate the conclusion. Therefore, it is important to check our preconceived biases and not let it taint our data.
+There is significant measurement bias in the dataset because the method of recording discounts either via text or numerically introduces bias in the dataset. This hurts the validity of our results because multiple data points had to be removed to allow for interpretation. In addition, without further research, one must be careful in establishing that there is a relationship between September and higher discounts. While we observed that 2024 September saw higher discounts, our initial hypothesis on back-to-school sales driving the discount might be due to our confirmation bias. However, further research is needed to validate the conclusion. Therefore, it is important to check our preconceived biases and not let it taint our data.
 
 \newpage
 
-\appendix
+\appendixW
 
 # Appendix {-}
 
