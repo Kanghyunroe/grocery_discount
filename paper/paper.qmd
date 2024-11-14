@@ -7,7 +7,7 @@ author:
 thanks: "Code and data are available at: [https://github.com/Kanghyunroe/grocery_discount](https://github.com/Kanghyunroe/grocery_discount)."
 date: today
 date-format: long
-abstract: "In a period of high grocery prices, grocery price discounts have helped lower costs of living for Canadians. The paper evaluates average grocery discounts by store and month and found that the highest discounts occured in September and at Walmart *insert number*. This is because there are a lot more back-to-school sales and Walmart is known to have generous discounts. The results of the paper informs shoppers' spending patterns to find the best deal."
+abstract: "In a period of high grocery prices, grocery price discounts have helped lower costs of living for Canadians. The paper evaluates average grocery discounts by store and month and found that the highest average discounts occured in September and at Walmart at 15.37%. The results of the paper informs shoppers' spending patterns to find the best deal."
 format: pdf
 number-sections: true
 bibliography: references.bib
@@ -54,15 +54,9 @@ Some paragraphs about how we go from a phenomena in the world to an entry in the
 
 # Discussion {#sec-discussion}
 
-September highest discount
-
-Walmart and Galleria in September
-
-If we split each vendor have highest highest vendor - likely because of back2skool sales 
-
 ## Correlation vs Causation {#sec-discussion-correlation-and-causation}
 
-If my paper were 10 pages, then should be be at least 2.5 pages. The discussion is a chance to show off what you know and what you learnt from all this. 
+It is important to distinguish correlation and causation for our results. Even though September saw the highest discounts, it is not the fact that it being september caused lower prices, it is correlated due to various factors such as students returning back to school. While there are multiple relationships to explore, we cannot claim that the time of the year causes higher grocery discounts. Further analysis is needed to explore what predictor variables influence grocery discounts, which would provide unique insights. 
 
 ## Missing Data {#sec-discussion-missing-data}
 
@@ -71,6 +65,8 @@ The dataset only records data from February 28th, 2024 to November 11th, 2024. T
 Moreover, the database had a lot of errors where either discounts were not listed, not all the entries were discounts, and the discount values were listed in text. All three errors made certain values unusable, leading us to filter them out of the dataset. 
 
 ## Sources of Bias {#sec-discussion-bias} 
+
+There is significant measurement bias in the dataset because the method of recording discounts either via text or numerically introduces bias in the dataset. This hurts the validity of our results because multiple datapoints had to be removed to allow for interpretation. In addition, without further research, one must be careful in establishing that there is a relationship between September and higher discounts. While we observed that 2024 September saw higher discounts, our initial hypothesis on back-to-school sales driving the discount might be due to our confirmation bias. However, further research is needed to validate the conclusion. Therefore, it is important to check our preconceived biases and not let it taint our data.
 
 \newpage
 
