@@ -7,7 +7,7 @@ author:
 thanks: "Code and data are available at: [https://github.com/Kanghyunroe/grocery_discount](https://github.com/Kanghyunroe/grocery_discount)."
 date: today
 date-format: long
-abstract: "In a period of high grocery prices, grocery price discounts have helped lower costs of living for Canadians. The paper evaluates average grocery discounts by store and month and found that the highest average discounts occured in September and at Walmart at 15.37%. The results of the paper informs shoppers' spending patterns to find the best deal."
+abstract: "In a period of high grocery prices, grocery price discounts have helped lower costs of living for Canadians. The paper evaluates average grocery discounts by store and month and found that the highest average discounts occured in September and at Walmart at $15.37. The results of the paper informs shoppers' spending patterns to find the best deal."
 format: pdf
 number-sections: true
 bibliography: references.bib
@@ -25,7 +25,7 @@ library(tidyverse)
 
 Since the end of the pandemic with rising inflation, grocery prices have been a contentious topic of concern for Canadians. While grocery chains have raised prices, they also have introduced various discounts to encourage shopping. 
 
-The database explores grocery price discounts from February, 28th, 2024 to November 14th, 2024, across various vendors such as NoFrills, Walmart, and SaveOnFoods. Based on our results the month of September had the highest average discounts at 4.18\%. In addition, Walmart had the highest average discounts in 2024 at 6.26\%. Finally, Walmart in September had the highest average discounts at 15.37\%. These results signal that Walmart is in-line with their corporate strategy and September is the most popular month for higher discounts potentially because of back-to-school sales. 
+The database explores grocery price discounts from February, 28th, 2024 to November 14th, 2024, across various vendors such as NoFrills, Walmart, and SaveOnFoods. Based on our results the month of September had the highest average discounts at \$4.18. In addition, Walmart had the highest average discounts in 2024 at \$6.26. Finally, Walmart in September had the highest average discounts at \$15.37. These results signal that Walmart is in-line with their corporate strategy and September is the most popular month for higher discounts potentially because of back-to-school sales. 
 
 Understanding the results of the paper suggests when what month and grocery chains has the highest average discount for each month, allowing us to make better shopping decisions. 
 
