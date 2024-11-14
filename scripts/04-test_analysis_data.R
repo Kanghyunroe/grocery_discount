@@ -8,62 +8,67 @@
 # Any other information needed? [...UPDATE THIS...]
 
 
-#### Workspace setup ####
+# Load necessary libraries
 library(tidyverse)
 library(testthat)
+library(here)
 
-data <- read_csv("data/02-analysis_data/analysis_data.csv")
-
+# Load data using `here` for file paths
+discount_bymonth <- read_csv(here::here("data/02-analysis_data/discount_bymonth.csv"))
+discount_byvendors <- read_csv(here::here("data/02-analysis_data/discount_byvendors.csv"))
 
 #### Test data ####
-# Test that the dataset has 151 rows - there are 151 divisions in Australia
-test_that("dataset has 151 rows", {
-  expect_equal(nrow(analysis_data), 151)
+
+# Ensure testthat setup
+context("Data validation tests for discount datasets")
+
+# Test 1: Check if the datasets have the expected columns
+test_that("Expected columns are present in discount datasets", {
+  expected_columns_bymonth <- c("month", "avg_discount")
+  expected_columns_byvendors <- c("vendor", "avg_discount")
+  
+  # Check columns in each dataset
+  expect_true(all(expected_columns_bymonth %in% colnames(discount_bymonth)))
+  expect_true(all(expected_columns_byvendors %in% colnames(discount_byvendors)))
 })
 
-# Test that the dataset has 3 columns
-test_that("dataset has 3 columns", {
-  expect_equal(ncol(analysis_data), 3)
+# Test 2: Check if `discount_bymonth` has the correct number of rows (12 for each month)
+test_that("discount_bymonth has 10 rows", {
+  expect_equal(nrow(discount_bymonth), 10)
 })
 
-# Test that the 'division' column is character type
-test_that("'division' is character", {
-  expect_type(analysis_data$division, "character")
+# Test 3: Check if `discount_byvendors` has the correct number of rows (8 for each vendor)
+test_that("discount_byvendors has 8 rows", {
+  expect_equal(nrow(discount_byvendors), 8)
 })
 
-# Test that the 'party' column is character type
-test_that("'party' is character", {
-  expect_type(analysis_data$party, "character")
+# Test 4: Check if the 'month' column in `discount_bymonth` has values between 1 and 12
+test_that("'month' column contains values between 1 and 12", {
+  valid_months <- 1:12
+  expect_true(all(discount_bymonth$month %in% valid_months))
 })
 
-# Test that the 'state' column is character type
-test_that("'state' is character", {
-  expect_type(analysis_data$state, "character")
+# Test 5: Check if the 'avg_discount' column in both datasets is numeric
+test_that("'avg_discount' column is numeric in both datasets", {
+  expect_type(discount_bymonth$avg_discount, "double")
+  expect_type(discount_byvendors$avg_discount, "double")
 })
 
-# Test that there are no missing values in the dataset
-test_that("no missing values in dataset", {
-  expect_true(all(!is.na(analysis_data)))
+# Test 6: Check if there are no missing values in both datasets
+test_that("no missing values in both datasets", {
+  expect_true(all(!is.na(discount_bymonth)))
+  expect_true(all(!is.na(discount_byvendors)))
 })
 
-# Test that 'division' contains unique values (no duplicates)
-test_that("'division' column contains unique values", {
-  expect_equal(length(unique(analysis_data$division)), 151)
+# Test 7: Check if 'vendor' column in `discount_byvendors` contains expected vendor names
+test_that("'vendor' column contains expected vendor names", {
+  valid_vendors <- c("NoFrills", "Voila", "Loblaws", "SaveOnFoods", "Metro", "TandT", "Galleria", "Walmart")
+  expect_true(all(discount_byvendors$vendor %in% valid_vendors))
 })
 
-# Test that 'state' contains only valid Australian state or territory names
-valid_states <- c("New South Wales", "Victoria", "Queensland", "South Australia", "Western Australia", 
-                  "Tasmania", "Northern Territory", "Australian Capital Territory")
-test_that("'state' contains valid Australian state names", {
-  expect_true(all(analysis_data$state %in% valid_states))
-})
-
-# Test that there are no empty strings in 'division', 'party', or 'state' columns
-test_that("no empty strings in 'division', 'party', or 'state' columns", {
-  expect_false(any(analysis_data$division == "" | analysis_data$party == "" | analysis_data$state == ""))
-})
-
-# Test that the 'party' column contains at least 2 unique values
-test_that("'party' column contains at least 2 unique values", {
-  expect_true(length(unique(analysis_data$party)) >= 2)
+# Test 8: Check if 'avg_discount' values are within realistic ranges in both datasets
+test_that("'avg_discount' values are within realistic ranges in both datasets", {
+  # Expected ranges
+  expect_true(all(discount_bymonth$avg_discount >= 1 & discount_bymonth$avg_discount <= 5))
+  expect_true(all(discount_byvendors$avg_discount >= 1 & discount_byvendors$avg_discount <= 7))
 })
