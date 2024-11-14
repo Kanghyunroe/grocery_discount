@@ -51,6 +51,7 @@ We used the statistical programming language `R` [@citeR] to produce graphs to b
 #| echo: false
 #| warning: false
 #| message: false
+#| fig-align: center
 
 
 month_discount <- read_csv(here("data/02-analysis_data/discount_bymonth.csv"), show_col_types = FALSE)
@@ -61,12 +62,16 @@ ggplot(month_discount, aes(x = month, y = avg_discount)) +
   scale_x_continuous(breaks = scales::pretty_breaks(n = 10))
 ```
 
+@fig-month shows how average nominal discounts varies for each month, highlighting that September had the highest discounts in 2024. 
+
 ```{r}
 #| label: fig-vendor
 #| fig-cap: Average Discounted Dollar Amount Provided by Each Vendor
 #| echo: false
 #| warning: false
 #| message: false
+#| fig-align: center
+
 
 
 vendor_discount <- read_csv(here("data/02-analysis_data/discount_byvendors.csv"), show_col_types = FALSE)
@@ -75,6 +80,8 @@ ggplot(vendor_discount, aes(x = vendor, y = avg_discount)) +
   geom_bar(stat = "identity") + theme_minimal() + 
   labs(x = "Vendor", y = "Average Discounted Dollars")
 ```
+
+@fig-vendor shows the average discount amounts for each vendor, showing that Walmart had the highest discounts in 2024, on average. 
 
 ```{r}
 #| label: fig-vendor-month
@@ -91,6 +98,8 @@ ggplot(monthly_vendor, aes(x = month, y = avg_discount, color = vendor)) +
   labs(x = "Month", y = "Average Discounted Dollars") +
   scale_x_continuous(breaks = scales::pretty_breaks(n = 10))
 ```
+
+@fig-vendor-month breaks down the averaged discount amounts further into each month and vendor, showing the increase in discount amount observed in September is mainly from Walmart.
 
 
 # Discussion {#sec-discussion}
