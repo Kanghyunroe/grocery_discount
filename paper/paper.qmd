@@ -76,6 +76,21 @@ ggplot(vendor_discount, aes(x = vendor, y = avg_discount)) +
   labs(x = "Vendor", y = "Average Discounted Dollars")
 ```
 
+```{r}
+#| label: fig-vendor-month
+#| fig-cap: Average Discounted Dollar Amount Provided by Each Vendor Thoughout the Months
+#| echo: false
+#| warning: false
+#| message: false
+
+
+monthly_vendor <- read_csv(here("data/02-analysis_data/monthly_vendor.csv"), show_col_types = FALSE)
+
+ggplot(monthly_vendor, aes(x = month, y = avg_discount, color = vendor)) + 
+  geom_line() + theme_minimal() + 
+  labs(x = "Month", y = "Average Discounted Dollars") +
+  scale_x_continuous(breaks = scales::pretty_breaks(n = 10))
+```
 
 
 # Discussion {#sec-discussion}
