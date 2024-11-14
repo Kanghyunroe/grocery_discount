@@ -19,6 +19,8 @@ bibliography: references.bib
 #| message: false
 
 library(tidyverse)
+library(ggplot2)
+library(here)
 ```
 
 # Introduction
@@ -43,6 +45,36 @@ We used the statistical programming language `R` [@citeR] to produce graphs to b
 
 # Results {#sec-results}
 
+```{r}
+#| label: fig-month
+#| fig-cap: Average Discounted Dollar Amount Each Month
+#| echo: false
+#| warning: false
+#| message: false
+
+
+month_discount <- read_csv(here("data/02-analysis_data/discount_bymonth.csv"), show_col_types = FALSE)
+
+ggplot(month_discount, aes(x = month, y = avg_discount)) + 
+  geom_bar(stat = "identity") + theme_minimal() + 
+  labs(x = "Month", y = "Average Discounted Dollars") +
+  scale_x_continuous(breaks = scales::pretty_breaks(n = 10))
+```
+
+```{r}
+#| label: fig-vendor
+#| fig-cap: Average Discounted Dollar Amount Provided by Each Vendor
+#| echo: false
+#| warning: false
+#| message: false
+
+
+vendor_discount <- read_csv(here("data/02-analysis_data/discount_byvendors.csv"), show_col_types = FALSE)
+
+ggplot(vendor_discount, aes(x = vendor, y = avg_discount)) + 
+  geom_bar(stat = "identity") + theme_minimal() + 
+  labs(x = "Vendor", y = "Average Discounted Dollars")
+```
 
 
 
