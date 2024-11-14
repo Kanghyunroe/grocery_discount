@@ -1,10 +1,10 @@
 ---
-title: "My title"
-subtitle: "My subtitle if needed"
+title: "Evaluating Average Grocery Discounts by Store and Month in Canada in 2024"
 author: 
-  - First author
-  - Another author
-thanks: "Code and data are available at: [https://github.com/RohanAlexander/starter_folder](https://github.com/RohanAlexander/starter_folder)."
+  - Fangning Zhang
+  - Cher Ning-Li
+  - Kevin Roe
+thanks: "Code and data are available at: [https://github.com/Kanghyunroe/grocery_discount](https://github.com/Kanghyunroe/grocery_discount)."
 date: today
 date-format: long
 abstract: "First sentence. Second sentence. Third sentence. Fourth sentence."
@@ -19,11 +19,12 @@ bibliography: references.bib
 #| message: false
 
 library(tidyverse)
-library(palmerpenguins)
 ```
 
 
 # Introduction
+
+February to November 
 
 Overview paragraph
 
@@ -58,20 +59,13 @@ Add graphs, tables and text. Use sub-sub-headings for each outcome variable or u
 
 
 
-Some of our data is of penguins (@fig-bills), from @palmerpenguins.
 
 ```{r}
 #| label: fig-bills
 #| fig-cap: Bills of penguins
 #| echo: false
 
-ggplot(penguins, aes(x = island, fill = species)) +
-  geom_bar(alpha = 0.8) +
-  scale_fill_manual(values = c("darkorange","purple","cyan4"),
-                    guide = "none") +
-  theme_minimal() +
-  facet_wrap(~species, ncol = 1) +
-  coord_flip()
+
 ```
 
 Talk more about it.
@@ -176,6 +170,12 @@ modelsummary::modelsummary(
 
 # Discussion
 
+September highest discount
+
+Walmart and Galleria in September
+
+If we split each vendor have highest highest vendor - likely because of back2skool sales 
+
 ## First discussion point {#sec-first-point}
 
 If my paper were 10 pages, then should be be at least 2.5 pages. The discussion is a chance to show off what you know and what you learnt from all this. 
@@ -188,8 +188,7 @@ Please don't use these as sub-heading labels - change them to be what your point
 
 ## Weaknesses and next steps
 
-Weaknesses and next steps should also be included.
-
+Problemsiwth february becaues it starts at 28th 
 \newpage
 
 \appendix
