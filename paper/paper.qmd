@@ -118,11 +118,6 @@ Moreover, the database had a lot of errors where either discounts were not liste
 
 There is significant measurement bias in the dataset because the method of recording discounts either via text or numerically introduces bias in the dataset. This hurts the validity of our results because multiple data points had to be removed to allow for interpretation. In addition, without further research, one must be careful in establishing that there is a relationship between September and higher discounts. While we observed that 2024 September saw higher discounts, our initial hypothesis on back-to-school sales driving the discount might be due to our confirmation bias. However, further research is needed to validate the conclusion. Therefore, it is important to check our preconceived biases and not let it taint our data.
 
-\newpage
-
-\appendixW
-
-# Appendix {-}
 
 \newpage
 
