@@ -41,7 +41,7 @@ The dataset was obtained from @citeData, and contains pricing information about 
 
 Using SQL, the data was cleaned and organized to locate patterns. This dataset contained many entries where data was incorrectly entered, often with the word "was" under the variable tracking original price. There are also events that are not price changes, such as out of stock notices, that are recorded in Raw. These events are distinguished by a null value in the old_price column. Both of these occurences were filtered out using SQL. To find patterns, the average discount amount for each month and each vendor was also calculated using SQL.
 
-We used the statistical programming language `R` [@citeR] to produce graphs to better visualize the data cleaned by SQL. 
+We used the statistical programming language `R` [@citeR] and packages `tidyverse` [@tidyverse], `here` [@here], and `ggplot` [@ggplot2] to produce graphs to better visualize the data cleaned by SQL.
 
 # Results {#sec-results}
 
