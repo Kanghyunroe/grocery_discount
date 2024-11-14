@@ -51,6 +51,7 @@ We used the statistical programming language `R` [@citeR] to produce graphs to b
 #| echo: false
 #| warning: false
 #| message: false
+#| fig-align: center
 
 
 month_discount <- read_csv(here("data/02-analysis_data/discount_bymonth.csv"), show_col_types = FALSE)
@@ -69,6 +70,8 @@ ggplot(month_discount, aes(x = month, y = avg_discount)) +
 #| echo: false
 #| warning: false
 #| message: false
+#| fig-align: center
+
 
 
 vendor_discount <- read_csv(here("data/02-analysis_data/discount_byvendors.csv"), show_col_types = FALSE)
