@@ -7,7 +7,7 @@ author:
 thanks: "Code and data are available at: [https://github.com/Kanghyunroe/grocery_discount](https://github.com/Kanghyunroe/grocery_discount)."
 date: today
 date-format: long
-abstract: "First sentence. Second sentence. Third sentence. Fourth sentence."
+abstract: "In a period of high grocery prices, grocery price discounts have helped lower costs of living for Canadians. The paper evaluates average grocery discounts by store and month and found that the highest discounts occured in September and at Walmart *insert number*. This is because there are a lot more back-to-school sales and Walmart is known to have generous discounts. The results of the paper informs shoppers' spending patterns to find the best deal."
 format: pdf
 number-sections: true
 bibliography: references.bib
@@ -20,11 +20,6 @@ bibliography: references.bib
 
 library(tidyverse)
 ```
-
-
-
-
-
 
 # Introduction
 
@@ -77,9 +72,6 @@ Moreover, the database had a lot of errors where either discounts were not liste
 
 ## Sources of Bias {#sec-discussion-bias} 
 
-## Weaknesses and next steps
-
-Problemsiwth february becaues it starts at 28th 
 \newpage
 
 \appendix
