@@ -61,6 +61,8 @@ ggplot(month_discount, aes(x = month, y = avg_discount)) +
   scale_x_continuous(breaks = scales::pretty_breaks(n = 10))
 ```
 
+@fig-month shows how average nominal discounts varies for each month, highlighting that September had the highest discounts in 2024. 
+
 ```{r}
 #| label: fig-vendor
 #| fig-cap: Average Discounted Dollar Amount Provided by Each Vendor
@@ -76,6 +78,7 @@ ggplot(vendor_discount, aes(x = vendor, y = avg_discount)) +
   labs(x = "Vendor", y = "Average Discounted Dollars")
 ```
 
+@fig-vendor shows the average discount amounts for each vendor, showing that Walmart had the highest discounts in 2024, on average. 
 
 
 # Discussion {#sec-discussion}
