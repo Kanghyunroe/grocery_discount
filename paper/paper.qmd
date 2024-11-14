@@ -25,7 +25,7 @@ library(tidyverse)
 
 Since the end of the pandemic with rising inflation, grocery prices have been a contentious topic of concern for Canadians. While grocery chains have raised prices, they also have introduced various discounts to encourage shopping. 
 
-[insert results and scope of the study]
+The database explores grocery price discounts from February, 28th, 2024 to November 14th, 2024, across various vendors such as NoFrills, Walmart, and SaveOnFoods. Based on our results the month of September had the highest average discounts at 4.18\%. In addition, Walmart had the highest average discounts in 2024 at 6.26\%. Finally, Walmart in September had the highest average discounts at 15.37\%. These results signal that Walmart is in-line with their corporate strategy and September is the most popular month for higher discounts potentially because of back-to-school sales. 
 
 Understanding the results of the paper suggests when what month and grocery chains has the highest average discount for each month, allowing us to make better shopping decisions. 
 
