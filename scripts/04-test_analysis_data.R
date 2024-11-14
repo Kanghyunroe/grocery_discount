@@ -1,11 +1,10 @@
 #### Preamble ####
-# Purpose: Tests... [...UPDATE THIS...]
-# Author: Rohan Alexander [...UPDATE THIS...]
-# Date: 26 September 2024 [...UPDATE THIS...]
-# Contact: rohan.alexander@utoronto.ca [...UPDATE THIS...]
+# Purpose: Tests data
+# Author: Kevin Roe, Cher Ning-Li, Fangning Zhang
+# Date: 14 November 2024
+# Contact: cher.ning@mail.utoronto.ca
 # License: MIT
-# Pre-requisites: [...UPDATE THIS...]
-# Any other information needed? [...UPDATE THIS...]
+# Pre-requisites: prepared analysis data using SQL
 
 
 # Load necessary libraries
