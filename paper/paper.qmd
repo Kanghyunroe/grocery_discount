@@ -35,17 +35,11 @@ The paper is structured as follows: @sec-data focuses on the data and measuremen
 
 # Data {#sec-data}
 
-## Overview
+The dataset was obtained from @citeData, and contains pricing information about products offered across 8 major grocers across Canada — Voila, T&T, Loblaws, No Frills, Metro, Galleria, Walmart and Save-On-Foods. The pricing data was compiled from the vendor's websites directly. One table, named Product, contained information about the product name and vendor. Another table, named Raw, tracked all the price changes of these products, including the original price, new price, and time of price change each time it occurred. The time frame that the data covers is from February 28, 2024 until November 14, 2024 around noon. 
 
-We use the statistical programming language R [@citeR].... Our data [@shelter].... Following @tellingstories, we consider...
+Using SQL, the data was cleaned and organized to locate patterns. This dataset contained many entries where data was incorrectly entered, often with the word "was" under the variable tracking original price. There are also events that are not price changes, such as out of stock notices, that are recorded in Raw. These events are distinguished by a null value in the old_price column. Both of these occurences were filtered out using SQL. To find patterns, the average discount amount for each month and each vendor was also calculated using SQL.
 
-Overview text
-
-## Measurement
-	
-Some paragraphs about how we go from a phenomena in the world to an entry in the dataset.
-
-
+We used the statistical programming language `R` [@citeR] to produce graphs to better visualize the data cleaned by SQL. 
 
 # Results {#sec-results}
 
