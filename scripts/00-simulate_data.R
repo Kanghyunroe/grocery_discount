@@ -8,23 +8,6 @@
 
 
 #### Workspace setup ####
-library(tidyverse)
-set.seed(853)
-
-
-#### Simulate data ####
-# State names
-states <- c(
-  "New South Wales",
-  "Victoria",
-  "Queensland",
-  "South Australia",
-  "Western Australia",
-  "Tasmania",
-  "Northern Territory",
-  "Australian Capital Territory"
-)
-
 # Load necessary library
 library(tidyverse)
 set.seed(853)
