@@ -47,7 +47,7 @@ We used the statistical programming language `R` [@citeR] and packages `tidyvers
 
 ```{r}
 #| label: fig-month
-#| fig-cap: Average Discounted Dollar Amount Each Month
+#| fig-cap: Average Discounted Dollar Amount Each Month from March to November 2024
 #| echo: false
 #| warning: false
 #| message: false
@@ -55,20 +55,23 @@ We used the statistical programming language `R` [@citeR] and packages `tidyvers
 
 
 month_discount <- read_csv(here("data/02-analysis_data/discount_bymonth.csv"), show_col_types = FALSE)
+month_discount <- subset(month_discount, month>2)
+month_discount$month <- month.abb[month_discount$month]
+#lock in month order
+month_discount$month <- factor(month_discount$month, levels = month_discount$month)
 
 ggplot(month_discount, aes(x = month, y = avg_discount)) + 
   geom_bar(stat = "identity") + theme_minimal() + 
-  labs(x = "Month", y = "Average Discounted Dollars") +
-  scale_x_continuous(breaks = scales::pretty_breaks(n = 10))
+  labs(x = "Month", y = "Average Discounted Dollars")
 ```
 
-@fig-month shows how average nominal discounts varies for each month, highlighting that September had the highest discounts in 2024. 
+@fig-month shows how average nominal discounts varies for each month, highlighting that September had the highest discounts in 2024. As the dataset only includes information starting from Feb 28, 2024, it is insufficient to accurately represent the average amount of discounts provided across the whole month. For this reason, February data has been omitted from this graph. 
 
 \newpage
 
 ```{r}
 #| label: fig-vendor
-#| fig-cap: Average Discounted Dollar Amount Provided by Each Vendor
+#| fig-cap: Average Discounted Dollar Amount Provided by Each Vendor Between Feb 28 and Nov 14
 #| echo: false
 #| warning: false
 #| message: false
