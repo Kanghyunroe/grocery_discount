@@ -92,21 +92,24 @@ ggplot(vendor_discount, aes(x = vendor, y = avg_discount)) +
 
 ```{r}
 #| label: fig-vendor-month
-#| fig-cap: Average Discounted Dollar Amount Provided by Each Vendor Thoughout the Months
+#| fig-cap: Average Discounted Dollar Amount Provided by Each Vendor Per Month from March to November 2024
 #| echo: false
 #| warning: false
 #| message: false
 
 
 monthly_vendor <- read_csv(here("data/02-analysis_data/monthly_vendor.csv"), show_col_types = FALSE)
+mv1 <- subset(monthly_vendor, month>2)
+mv1$month <- month.abb[mv1$month]
+#lock in month order
+mv1$month <- factor(mv1$month, levels = unique(mv1$month))
 
-ggplot(monthly_vendor, aes(x = month, y = avg_discount, color = vendor)) + 
+ggplot(mv1, aes(x = month, y = avg_discount, color = vendor, group = vendor)) + 
   geom_line() + theme_minimal() + 
-  labs(x = "Month", y = "Average Discounted Dollars") +
-  scale_x_continuous(breaks = scales::pretty_breaks(n = 10))
+  labs(x = "Month", y = "Average Discounted Dollars", color = "Vendor")
 ```
 
-@fig-vendor-month breaks down the averaged discount amounts further into each month and vendor, showing the increase in discount amount observed in September is mainly from Walmart.
+@fig-vendor-month breaks down the averaged discount amounts further into each month and vendor, showing the increase in discount amount observed in September is mainly from Walmart. Similarly to @fig-month, February entries were omitted due to the lack of sufficient data for that month. 
 
 \newpage
 
@@ -118,7 +121,7 @@ It is important to distinguish correlation and causation for our results. Even t
 
 ## Missing Data {#sec-discussion-missing-data}
 
-The dataset only records data from February 28th, 2024 to November 11th, 2024. The problem is then that the February entry in @fig-month does not accurately reflect the average grocery discount. For future study, I'd want to have a greater variation of our data across multiple years so we can find a more accurate the average grocery discount for each month. 
+The dataset only records data from February 28th, 2024 to November 14th, 2024. The problem is then that the February entry in @fig-month does not accurately reflect the average grocery discount. For future study, I'd want to have a greater variation of our data across multiple years so we can find a more accurate the average grocery discount for each month. 
 
 Moreover, the database had a lot of errors where either discounts were not listed, not all the entries were discounts, and the discount values were listed in text. All three errors made certain values unusable, leading us to filter them out of the dataset. 
 
